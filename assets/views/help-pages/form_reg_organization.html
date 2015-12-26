@@ -10,13 +10,17 @@
 </section>-->
 <!-- end: PAGE TITLE -->
 
+
 <div class="col-md-8 col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2  col-md-offset-2">
     <div class="logo">
-        <img ng-src="{{app.layout.logo}}" alt="{{app.name}}" />
+        <a ui-sref="app.dashboard"><img ng-src="{{app.layout.logo}}" alt="{{app.name}}" /></a> 
     </div>
 
     <!-- start: REGISTER BOX -->
     <div class="box-register">
+        <!-- toaster directive -->
+        <toaster-container toaster-options="{'position-class': 'toast-top-right', 'close-button':true}"></toaster-container>
+        <!-- / toaster directive -->
         <!-- start:NGO Collation Body Registration Form -->
         <div class="container-fluid container-fullw bg-white">
             <div class="row">
@@ -65,6 +69,7 @@
                                         </a>
                                     </li>
                                 </ul>
+                              
                                 <!-- end: Registration SEPS -->
                                 <!-- start: Registration STEP 1 -->
                                 <div id="step-1" ng-show="currentStep == 1">
