@@ -32,7 +32,7 @@ function ($stateProvider, $urlRouterProvider, $controllerProvider, $compileProvi
     // Set up the states
     $stateProvider.state('app', {
         url: "/help-ng",
-        templateUrl: "assets/views/app.html",
+        templateUrl: "assets/views/help-pages/app.html",
         resolve: loadSequence('modernizr', 'moment', 'angularMoment', 'uiSwitch', 'perfect-scrollbar-plugin', 'toaster', 'ngAside', 'vAccordion', 'sweet-alert', 'chartjs', 'tc.chartjs', 'oitozero.ngSweetAlert', 'chatCtrl', 'truncate', 'htmlToPlaintext', 'angular-notification-icons'),
         abstract: true
     }).state('app.dashboard', {
