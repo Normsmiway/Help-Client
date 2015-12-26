@@ -392,7 +392,7 @@ function ($stateProvider, $urlRouterProvider, $controllerProvider, $compileProvi
 
     .state('registration', {
         url: '/registration',
-        templateUrl: "assets/views/help-pages/app.html",
+        template: '<div ui-view class="fade-in-right-big smooth"></div>',
         resolve: loadSequence('modernizr', 'moment', 'angularMoment', 'uiSwitch', 'perfect-scrollbar-plugin', 'toaster', 'ngAside', 'vAccordion', 'sweet-alert', 'chartjs', 'tc.chartjs', 'oitozero.ngSweetAlert', 'chatCtrl', 'truncate', 'htmlToPlaintext', 'angular-notification-icons'),
         abstract: true
     }).state('registration.individual', {
