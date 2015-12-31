@@ -19,11 +19,11 @@
                 <notification-icon count='scopeVariable'>
                     <i class="ti-comment"></i>
                 </notification-icon>
-                <span translate="topbar.messages.MAIN">MESSAGES</span>
+                <span>MESSAGES</span>
             </a>
             <ul class="dropdown-menu dropdown-light dropdown-messages dropdown-large">
                 <li>
-                    <span class="dropdown-header" translate="topbar.messages.HEADER"> Unread messages</span>
+                    <span class="dropdown-header"> Unread messages</span>
                 </li>
                 <li>
                     <div class="drop-down-wrapper ps-container">
@@ -47,7 +47,7 @@
                     </div>
                 </li>
                 <li class="view-all">
-                    <a href="#" translate="topbar.messages.SEEALL"> See All </a>
+                    <a href="#" >See All </a>
                 </li>
             </ul>
         </li>
@@ -58,7 +58,7 @@
             <a href class="dropdown-toggle" uib-dropdown-toggle> <i class="ti-check-box"></i> <span tra-0nslate="topbar.activities.MAIN">ACTIVITIES</span> </a>
             <ul class="dropdown-menu dropdown-light dropdown-messages dropdown-large">
                 <li>
-                    <span class="dropdown-header" translate="topbar.activities.HEADER"> You have new notifications</span>
+                    <span class="dropdown-header"> You have new notifications</span>
                 </li>
                 <li>
                     <div class="drop-down-wrapper ps-container">
@@ -69,7 +69,7 @@
                     </div>
                 </li>
                 <li >
-                    <a class="view-all" href="#" translate="topbar.activities.SEEALL"> See All </a>
+                    <a class="view-all" href="#"> See All </a>
                 </li>
             </ul>
         </li>
@@ -77,7 +77,7 @@
 
         <!-- start: LOGOUT BUTTON -->
         <li class="dropdown" uib-dropdown on-toggle="toggled(open)">
-            <a  ui-sref="login.signin"s class="dropdown-toggle" uib-dropdown-toggle> <i class="ti-arrow-circle-right"></i> <span translate="topbar.user.LOGOUT">LOG OUT</span> </a>
+            <a  ui-sref="login.signin"s class="dropdown-toggle" uib-dropdown-toggle> <i class="ti-arrow-circle-right"></i> <span>LOG OUT</span> </a>
         </li>
         <!-- start: LOGOUT BUTTON -->
 
@@ -86,7 +86,7 @@
             <a ui-sref="app.dashboard" uib-dropdown-toggle> <img src="assets/images/avatar-1.jpg" alt="{{user.name}}"> <span class="username">{{user.name}} <i class="ti-user"></i></i></span> </a>
             <ul class="dropdown-menu dropdown-dark">
                 <li>
-                    <a ui-sref="login.signin" translate="topbar.user.LOGOUT"> Log Out </a>
+                    <a ui-sref="login.signin" > Log Out </a>
                 </li>
             </ul>
         </li>

@@ -16,9 +16,10 @@
     </form>
 </div>
 <!-- end: SEARCH FORM -->
+
 <!-- start: MAIN NAVIGATION MENU -->
 <div class="navbar-title">
-    <span translate="sidebar.heading.NAVIGATION">Main Navigation</span>
+    <span >Main Navigation</span>
 </div>
 <ul class="main-navigation-menu">
     <li ng-class="{'active open':$state.includes('registration')}">
@@ -28,23 +29,23 @@
                     <i class="ti-user"></i>
                 </div>
                 <div class="item-inner">
-                    <span class="title" translate="sidebar.nav.registration.MAIN"> Registration </span><i class="icon-arrow"></i>
+                    <span class="title"> Registration </span><i class="icon-arrow"></i>
                 </div>
             </div>
         </a>
         <ul class="sub-menu">
             <li ui-sref-active="active">
                 <a ui-sref="registration.individual">
-                    <span class="title" translate="sidebar.nav.registration.INDIVIDUAL"> Individual Registration Form </span>
+                    <span class="title"> Individual Registration Form </span>
                 </a>
             </li>
             <li ui-sref-active="active">
                 <a ui-sref="registration.ngo">
-                    <span class="title" translate="sidebar.nav.registration.NGO"> NGO Registration Form </span>
+                    <span class="title"> NGO Registration Form </span>
                 </a>
             </li>
             <li ui-sref-active="active">
-                <a ui-sref="registration.collationer" translate="sidebar.nav.registration.COLLATTIONER">
+                <a ui-sref="registration.collationer">
                     <span class="title">Collation Body Registration Forms</span>
                 </a>
             </li>
