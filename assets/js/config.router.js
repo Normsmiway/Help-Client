@@ -27,7 +27,7 @@ function ($stateProvider, $urlRouterProvider, $controllerProvider, $compileProvi
     // APPLICATION ROUTES
     // -----------------------------------
     // For any unmatched url, redirect to /app/dashboard
-    $urlRouterProvider.otherwise("/help-ng/pages/user");
+    $urlRouterProvider.otherwise("/help-ng/user");
     //
     // Set up the states
     $stateProvider.state('app', {
