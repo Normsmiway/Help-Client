@@ -411,6 +411,15 @@ function ($stateProvider, $urlRouterProvider, $controllerProvider, $compileProvi
             label: 'NGO'
         },
         resolve: loadSequence('wizardCtrl')
+    }).state('registration.donate', {
+        url: '/donation',
+        templateUrl: "assets/views/help-pages/form_donation.html",
+        title: 'Make donation',
+        ncyBreadcrumb: {
+            label: 'Donate'
+        },
+        resolve: loadSequence('wizardCtrl', 'touchspin-plugin')
+
     }).state('registration.collationer', {
         url: '/collationer',
         templateUrl: "assets/views/help-pages/form_reg_collationer.html",
