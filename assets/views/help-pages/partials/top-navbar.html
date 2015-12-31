@@ -52,9 +52,10 @@
             </ul>
         </li>
         <!-- end: MESSAGES DROPDOWN -->
+
         <!-- start: ACTIVITIES DROPDOWN -->
         <li class="dropdown" uib-dropdown on-toggle="toggled(open)">
-            <a href class="dropdown-toggle" uib-dropdown-toggle> <i class="ti-check-box"></i> <span translate="topbar.activities.MAIN">ACTIVITIES</span> </a>
+            <a href class="dropdown-toggle" uib-dropdown-toggle> <i class="ti-check-box"></i> <span tra-0nslate="topbar.activities.MAIN">ACTIVITIES</span> </a>
             <ul class="dropdown-menu dropdown-light dropdown-messages dropdown-large">
                 <li>
                     <span class="dropdown-header" translate="topbar.activities.HEADER"> You have new notifications</span>
@@ -67,38 +68,23 @@
                         </div>
                     </div>
                 </li>
-                <li class="view-all">
-                    <a href="#" translate="topbar.activities.SEEALL"> See All </a>
+                <li >
+                    <a class="view-all" href="#" translate="topbar.activities.SEEALL"> See All </a>
                 </li>
             </ul>
         </li>
         <!-- end: ACTIVITIES DROPDOWN -->
-        <!-- start: LANGUAGE SWITCHER -->
+
+        <!-- start: LOGOUT BUTTON -->
         <li class="dropdown" uib-dropdown on-toggle="toggled(open)">
-            <a href class="dropdown-toggle" uib-dropdown-toggle> <i class="ti-world"></i> {{language.selected}} </a>
-            <ul role="menu" class="dropdown-menu dropdown-light fadeInUpShort">
-                <li ng-repeat="(localeId, langName) in language.available">
-                    <a ng-click="language.set(localeId, $event)" href="#" class="menu-toggler"> {{langName}} </a>
-                </li>
-            </ul>
+            <a  ui-sref="login.signin"s class="dropdown-toggle" uib-dropdown-toggle> <i class="ti-arrow-circle-right"></i> <span translate="topbar.user.LOGOUT">LOG OUT</span> </a>
         </li>
-        <!-- start: LANGUAGE SWITCHER -->
+        <!-- start: LOGOUT BUTTON -->
+
         <!-- start: USER OPTIONS DROPDOWN -->
         <li class="dropdown current-user" uib-dropdown on-toggle="toggled(open)">
-            <a href class="dropdown-toggle" uib-dropdown-toggle> <img src="assets/images/avatar-1.jpg" alt="{{user.name}}"> <span class="username">{{user.name}} <i class="ti-angle-down"></i></i></span> </a>
+            <a ui-sref="app.dashboard" uib-dropdown-toggle> <img src="assets/images/avatar-1.jpg" alt="{{user.name}}"> <span class="username">{{user.name}} <i class="ti-user"></i></i></span> </a>
             <ul class="dropdown-menu dropdown-dark">
-                <li>
-                    <a ui-sref="app.pages.user" translate="topbar.user.PROFILE"> My Profile </a>
-                </li>
-                <li>
-                    <a ui-sref="app.pages.calendar" translate="topbar.user.CALENDAR"> My Calendar </a>
-                </li>
-                <li>
-                    <a ui-sref="app.pages.messages" translate="topbar.user.MESSAGES"> My Messages (3) </a>
-                </li>
-                <li>
-                    <a ui-sref="login.lockscreen" translate="topbar.user.LOCKSCREEN"> Lock Screen </a>
-                </li>
                 <li>
                     <a ui-sref="login.signin" translate="topbar.user.LOGOUT"> Log Out </a>
                 </li>

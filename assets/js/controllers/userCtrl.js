@@ -21,7 +21,7 @@ app.controller('UserCtrl', ["$scope", "flowFactory", function ($scope, flowFacto
         twitter: 'a_adenekan',
         github: 'Norms16',
         facebook: 'tnorms1',
-        linkedin: '',
+        linkedin: 'Adenekan Tajudeen Adeleke',
         google: 'Adenekan Tajudeen',
         skype: 'normsmiway'
     };

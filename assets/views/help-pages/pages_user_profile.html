@@ -2,8 +2,9 @@
 <section id="page-title">
 	<div class="row">
 		<div class="col-sm-8">
-			<h1 class="mainTitle" translate="sidebar.nav.pages.USERPROFILE">USER PROFILE</h1>
-			<span class="mainDescription">This is sample User Profile (Under development)</span>
+			<h1 class="mainTitle text-red" translate="sidebar.nav.pages.USERPROFILE">USER PROFILE </h1><br />
+            <hi class="mainTitle text-red">LET ME TAKE THIS TIME OUT TO SAY:</hi>
+			<span class="mainDescription text-bold text-green">HAPPY NEW YEAR TO YOU MR.YEM! LET'S CELEBRATE!!!</span>
 		</div>
 		<div ncy-breadcrumb></div>
 	</div>
@@ -18,8 +19,9 @@
 			<div ng-controller="UserCtrl">
 				<!-- start: USER TABSET -->
 				<uib-tabset class="tabbable">
+
 					<!-- start: TAB OVERVIEW -->
-					<uib-tab heading="Overview">
+					<uib-tab heading="Profile Overview">
 						<div class="row">
 							<div class="col-md-4">
 								<div class="user-left">
@@ -316,6 +318,7 @@
 						</div>
 					</uib-tab>
 					<!-- end: TAB OVERVIEW -->
+
 					<!-- start: TAB EDIT ACCOUNT -->
 					<uib-tab heading="Edit Account" active="editActive">
 						<form action="#" role="form" id="form">
@@ -477,9 +480,10 @@
 						</form>
 					</uib-tab>
 					<!-- end: TAB EDIT ACCOUNT -->
+
 					<!-- start: TAB PROJECTS -->
-					<uib-tab heading="Projects">
-						<table class="table" id="projects">
+					<uib-tab heading="Account Information">
+						<!--<table class="table" id="projects">
 							<thead>
 								<tr>
 									<th>Project Name</th>
@@ -563,7 +567,7 @@
 									<td class="center hidden-xs"><span class="label label-warning">High</span></td>
 								</tr>
 							</tbody>
-						</table>
+						</table>-->
 					</uib-tab>
 					<!-- end: TAB PROJECTS -->
 				</uib-tabset>

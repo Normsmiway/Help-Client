@@ -37,7 +37,7 @@ function ($stateProvider, $urlRouterProvider, $controllerProvider, $compileProvi
         abstract: true
     }).state('app.dashboard', {
         url: '/user',
-        templateUrl: "assets/views/pages_user_profile.html",
+        templateUrl: "assets/views/help-pages/pages_user_profile.html",
         title: 'User Profile',
         ncyBreadcrumb: {
             label: 'User Profile'
