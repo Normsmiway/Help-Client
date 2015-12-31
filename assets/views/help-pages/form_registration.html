@@ -1,0 +1,49 @@
+﻿<!-- start: PAGE TITLE -->
+<!--<section id="page-title">
+    <div class="row">
+        <div class="col-sm-8">
+            <h1 class="mainTitle">REGISTRATION PAGE</h1>
+            <span class="mainDescription">Please register as appropraite  to you, you can register as Individual, NGO or Collation body.</span>
+        </div>
+        <div ncy-breadcrumb></div>
+    </div>
+</section>-->
+
+<!-- end: PAGE TITLE -->
+<!-- start: REGISTRATION -->
+<div class="container-fluid container-fullw bg-white">
+    <div class="row">
+        <div class="col-md-8 col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2  col-md-offset-2">
+          
+            <!-- start: USER TABSET -->
+            <uib-tabset class="tabbable" type="pills">
+
+                <!-- start: TAB INDIVIDUAL -->
+                <uib-tab class="text-bold text-white" heading="REGISTER AS AN INDIVIDUAL">
+                    <!-- main content -->
+                    <div data-ng-include=" 'assets/views/help-pages/form_reg_individual.html'"></div>
+                    <!-- / main content -->
+                </uib-tab>
+                <!-- End: TAB INDIVIDUAL -->
+
+                <!-- start: TAB NGO -->
+                <uib-tab heading="REGISTER AS NGO">
+                    <!-- main content -->
+                    <div data-ng-include=" 'assets/views/help-pages/form_reg_organization.html'"></div>
+                    <!-- / main content -->
+                </uib-tab>
+                <!-- End: TAB NGO -->
+
+                <!-- start: TAB COLLATION BODY -->
+                <uib-tab class="text-bold text-white" heading="REGISTER AS COLLATION BODY">
+                    <!-- main content -->
+                    <div data-ng-include=" 'assets/views/help-pages/form_reg_collationer.html'"></div>
+                    <!-- / main content -->
+                </uib-tab>
+                <!-- End: TAB COLLATION BODY -->
+
+            </uib-tabset>
+        </div>
+    </div>
+</div>
+<!-- end: REGISTRATION -->

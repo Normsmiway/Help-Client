@@ -395,6 +395,14 @@ function ($stateProvider, $urlRouterProvider, $controllerProvider, $compileProvi
         template: '<div ui-view class="fade-in-right-big smooth"></div>',
         resolve: loadSequence('modernizr', 'moment', 'angularMoment', 'uiSwitch', 'perfect-scrollbar-plugin', 'toaster', 'ngAside', 'vAccordion', 'sweet-alert', 'chartjs', 'tc.chartjs', 'oitozero.ngSweetAlert', 'chatCtrl', 'truncate', 'htmlToPlaintext', 'angular-notification-icons'),
         abstract: true
+    }).state('registration.all', {
+        url: '/all',
+        templateUrl: "assets/views/help-pages/form_registration.html",
+        title: 'Individual Registration Form',
+        ncyBreadcrumb: {
+            label: 'Individual'
+        },
+        resolve: loadSequence('wizardCtrl')
     }).state('registration.individual', {
         url: '/individual',
         templateUrl: "assets/views/help-pages/form_reg_individual.html",
