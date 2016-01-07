@@ -80,7 +80,11 @@
     //chat-submit directive
     app.directive('chatSubmit', SubmitChat);
     function SubmitChat() {
-        var submitTemplate = '<form ng-submit="submitChat()">' + '<div class="message-bar">' + '<div class="message-inner">' + '<a href="#" class="link icon-only"><i class="fa fa-camera"></i></a>' + '<div class="message-area"><input placeholder="Message" ng-model="ngModel" /></div>' + '<a translate="offsidebar.chat.SEND" href="#" class="link ng-scope" ng-click="submitChat()">Send</a>' + '</div>' + '</div>' + '</form>' + '</div>';
+        var submitTemplate = '<form ng-submit="submitChat()">' + '<div class="message-bar">' +
+            '<div class="message-inner">' + '<a href="#" class="link icon-only"><i class="fa fa-camera"></i></a>' +
+            '<div class="message-area"><input placeholder="Message" ng-model="ngModel" /></div>' +
+            '<a href="#" class="link ng-scope" ng-click="submitChat()">Send</a>' +
+            '</div>' + '</div>' + '</form>' + '</div>';
         var directive = {
             restrict: 'EA',
             template: submitTemplate,
@@ -115,7 +119,7 @@
         var submitTemplate = '<form ng-submit="SubmitTimeLine()">' + '<div class="message-bar">'
             + '<div class="message-inner">' + '<a href="#" class="link icon-only"><i class="fa fa-comment"></i></a>' +
             '<div class="message-area"><input placeholder="What is on your mind?" ng-model="ngModel" /></div>' +
-            '<a translate="offsidebar.chat.SEND" href="#" class="link ng-scope" ng-click="SubmitTimeLine()">Send</a>' +
+            '<a href="#" class="link ng-scope" ng-click="SubmitTimeLine()">Send</a>' +
             '</div>' + '</div>' + '</form>' + '</div>';
         var directive = {
             restrict: 'EA',
@@ -151,7 +155,7 @@
         var submitTemplate = '<form ng-submit="SubmitComment()">' + '<div class="message-bar bg-white"">' + '<div class="message-inner">' +
             '<a href="#" class="link icon-only"><i class="fa fa-comments"></i></a>' +
             '<div class="message-area"><input placeholder="write a comment" ng-model="ngModel" /></div>'
-            + '<a translate="offsidebar.chat.SEND" href="#" class="link ng-scope" ng-click="SubmitComment()">Send</a>' +
+            + '<a href="#" class="link ng-scope" ng-click="SubmitComment()">Send</a>' +
             '</div>' + '</div>' + '</form>' + '</div>';
         var directive = {
             restrict: 'EA',
