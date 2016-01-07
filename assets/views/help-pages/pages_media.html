@@ -1,0 +1,72 @@
+﻿<!-- start: PAGE TITLE -->
+<section id="page-title">
+    <div class="row">
+        <div class="col-sm-8">
+            <h1 class="mainTitle" translate="sidebar.nav.element.MEDIA">MEDIA</h1>
+            <span class="mainDescription">Images, thumbnails and media object.</span>
+        </div>
+        <div ncy-breadcrumb></div>
+    </div>
+</section>
+<!-- end: PAGE TITLE -->
+
+<div class="container-fluid container-fullw">
+    <div class="row">
+        <div class="col-md-12">
+            <h5 class="over-title">Media <span class="text-bold">Object</span></h5>
+            <p class="margin-bottom-30">
+                Abstract object styles for building various types of components (like blog comments, Tweets, etc) that feature a left- or right-aligned image alongside textual content.
+            </p>
+            <div class="col-md-3"></div>
+            <div class="row">
+                <div class="col-sm-6" ng-controller="timelineCtrl">
+                    <div class="panel panel-white">
+                        <div class="panel-heading">
+                            <div class="panel-title text-bold text-azure">
+                                Posts and Comments
+                            </div>
+                            <hr class="hr-dark" />
+                        </div>
+                        <perfect-scrollbar class="scroller" wheel-propagation="true" wheel-speed="10" min-scrollbar-length="20">
+                            <div class="panel-body panel-scroll" style="height:800px" perfect-scrollbar wheel-propagation="false" suppress-scroll-x="true">
+                                <ul class="media-list" ng-repeat="t in Timelines">
+                                    <li class="media">
+                                        <div class="img-circle">
+                                            <a href="#" class="pull-left">
+                                                <img src="{{t.avatar}}" alt="" class="media-object img-circle">
+                                            </a>
+                                        </div>
+                                        <div class="media-body">
+                                            <h4 class="text-extra-small text-azure text-bold">{{t.title}}</h4>
+                                            <p text-small>
+                                                {{t.content}}
+                                            </p>
+                                            <div id="scroller" class="panel-scroll height-155" perfect-scrollbar wheel-propagation="false" suppress-scroll-x="true">
+                                                <!-- Nested comment -->
+                                                <div class="media " ng-repeat="c in t.comments">
+                                                    <div class="img-circle">
+                                                        <a href="#" class="pull-left">
+                                                            <img src="{{c.user.avar}}" alt="user image" class="media-object img-circle">
+                                                        </a>
+                                                    </div>
+                                                    <div class="media-body">
+                                                        <p style="font-size:x-small">{{c.user.date}}</p>
+                                                        <p class="text-small">{{c.user.comment}}</p>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-md-10"><timeLine-comment  submit-function="submitComment" ng-model="userComment" scroll-element="#scroller"></timeLine-comment></div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </perfect-scrollbar>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3"></div>
+        </div>
+    </div>
+</div>

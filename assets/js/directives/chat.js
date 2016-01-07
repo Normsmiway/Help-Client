@@ -1,7 +1,6 @@
 (function () {
     'use strict';
     app.directive('clipChat', ClipChat);
-
     function ClipChat() {
         var chatTemplate = '<div>' + '<ol class="discussion">' + '<li class="messages-date" ng-repeat-start="message in newChatArray()" ng-if="displayDate($index) || $index == 0">{{message.date | amDateFormat:\'dddd, MMM D, h:mm a\'}}</li>' + '<li ng-class="{\'self\' : message.idUser == idSelf, \'other\' : message.idUser !== idSelf, \'nextSame\': newChatArray()[$index+1].idUser == message.idUser && !nextDate($index)}" ng-repeat-end>' + '<div class="message">' + '<div class="message-name" ng-if="newChatArray()[$index-1].idUser !== message.idUser || displayDate($index)">{{  message.user }}</div>' + '<div class="message-text">{{ message.content }}</div>' + '<div class="message-avatar"><img ng-src="{{ message.avatar }}" alt=""></div>' + '</div>' + '</li>' + '</ol>';
         var directive = {
@@ -76,8 +75,10 @@
 
         return directive;
     }
-    app.directive('chatSubmit', SubmitChat);
 
+
+    //chat-submit directive
+    app.directive('chatSubmit', SubmitChat);
     function SubmitChat() {
         var submitTemplate = '<form ng-submit="submitChat()">' + '<div class="message-bar">' + '<div class="message-inner">' + '<a href="#" class="link icon-only"><i class="fa fa-camera"></i></a>' + '<div class="message-area"><input placeholder="Message" ng-model="ngModel" /></div>' + '<a translate="offsidebar.chat.SEND" href="#" class="link ng-scope" ng-click="submitChat()">Send</a>' + '</div>' + '</div>' + '</form>' + '</div>';
         var directive = {
@@ -108,5 +109,75 @@
         return directive;
     }
 
+    //timeline-submit directive
+    app.directive('timelineSubmit', SubmitTimeLine);
+    function SubmitTimeLine() {
+        var submitTemplate = '<form ng-submit="SubmitTimeLine()">' + '<div class="message-bar">'
+            + '<div class="message-inner">' + '<a href="#" class="link icon-only"><i class="fa fa-comment"></i></a>' +
+            '<div class="message-area"><input placeholder="What is on your mind?" ng-model="ngModel" /></div>' +
+            '<a translate="offsidebar.chat.SEND" href="#" class="link ng-scope" ng-click="SubmitTimeLine()">Send</a>' +
+            '</div>' + '</div>' + '</form>' + '</div>';
+        var directive = {
+            restrict: 'EA',
+            template: submitTemplate,
+            replace: true,
+            scope: {
+                submitFunction: "=",
+                ngModel: "="
+            },
+            link: function ($scope, $element, $attrs) {
 
+                $scope.SubmitTimeLine = function () {
+                    $scope.submitFunction();
+
+
+                    if (typeof $attrs.scrollElement !== "undefined") {
+                        var scrlEl = angular.element($attrs.scrollElement);
+                        var lastElement = scrlEl.find('.discussion > li:last');
+                        if (lastElement.length)
+                            scrlEl.scrollToElementAnimated(lastElement);
+                    }
+
+                };
+            }
+        };
+
+        return directive;
+    }
+
+    //timeline-comment directive
+    app.directive('timelineComment', SubmitComment);
+    function SubmitComment() {
+        var submitTemplate = '<form ng-submit="SubmitComment()">' + '<div class="message-bar bg-white"">' + '<div class="message-inner">' +
+            '<a href="#" class="link icon-only"><i class="fa fa-comments"></i></a>' +
+            '<div class="message-area"><input placeholder="write a comment" ng-model="ngModel" /></div>'
+            + '<a translate="offsidebar.chat.SEND" href="#" class="link ng-scope" ng-click="SubmitComment()">Send</a>' +
+            '</div>' + '</div>' + '</form>' + '</div>';
+        var directive = {
+            restrict: 'EA',
+            template: submitTemplate,
+            replace: true,
+            scope: {
+                submitFunction: "=",
+                ngModel: "="
+            },
+            link: function ($scope, $element, $attrs) {
+
+                $scope.SubmitComment = function () {
+                    $scope.submitFunction();
+
+
+                    if (typeof $attrs.scrollElement !== "undefined") {
+                        var scrlEl = angular.element($attrs.scrollElement);
+                        var lastElement = scrlEl.find('.discussion > li:last');
+                        if (lastElement.length)
+                            scrlEl.scrollToElementAnimated(lastElement);
+                    }
+
+                };
+            }
+        };
+
+        return directive;
+    }
 })();

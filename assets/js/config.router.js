@@ -33,7 +33,7 @@ function ($stateProvider, $urlRouterProvider, $controllerProvider, $compileProvi
     $stateProvider.state('app', {
         url: "/help-ng",
         templateUrl: "assets/views/help-pages/app.html",
-        resolve: loadSequence('modernizr', 'moment', 'angularMoment', 'uiSwitch', 'perfect-scrollbar-plugin', 'toaster', 'ngAside', 'vAccordion', 'sweet-alert', 'chartjs', 'tc.chartjs', 'oitozero.ngSweetAlert', 'chatCtrl', 'truncate', 'htmlToPlaintext', 'angular-notification-icons'),
+        resolve: loadSequence('modernizr', 'moment', 'angularMoment', 'uiSwitch', 'perfect-scrollbar-plugin', 'toaster', 'ngAside', 'vAccordion', 'sweet-alert', 'chartjs', 'tc.chartjs', 'oitozero.ngSweetAlert', 'chatCtrl', 'truncate', 'htmlToPlaintext', 'angular-notification-icons', 'xeditable', 'checklist-model', 'xeditableCtrl'),
         abstract: true
     }).state('app.dashboard', {
         url: '/user',
@@ -43,6 +43,22 @@ function ($stateProvider, $urlRouterProvider, $controllerProvider, $compileProvi
             label: 'User Profile'
         },
         resolve: loadSequence('flow', 'userCtrl')
+    }).state('app.users', {
+        url: '/stories',
+        templateUrl: "assets/views/help-pages/pages_userstories.html",
+        title: 'User Stories',
+        ncyBreadcrumb: {
+            label: 'User Stories'
+        },
+        resolve: loadSequence('ngMap', 'timelineCtrl')
+    }).state('app.media', {
+        url: '/media',
+        templateUrl: "assets/views/help-pages/pages_media.html",
+        title: 'Media Page',
+        ncyBreadcrumb: {
+            label: 'User Stories'
+        },
+        resolve: loadSequence('timelineCtrl')
     }).state('app.ui', {
         url: '/ui',
         template: '<div ui-view class="fade-in-up"></div>',
@@ -392,7 +408,7 @@ function ($stateProvider, $urlRouterProvider, $controllerProvider, $compileProvi
 
     .state('registration', {
         url: '/registration',
-        template: '<div ui-view class="fade-in-right-big smooth"></div>',
+        templateUrl:'assets/views/help-pages/costume-bar.html', //'<div ui-view class="fade-in-right-big smooth"></div>',
         resolve: loadSequence('modernizr', 'moment', 'angularMoment', 'uiSwitch', 'perfect-scrollbar-plugin', 'toaster', 'ngAside', 'vAccordion', 'sweet-alert', 'chartjs', 'tc.chartjs', 'oitozero.ngSweetAlert', 'chatCtrl', 'truncate', 'htmlToPlaintext', 'angular-notification-icons'),
         abstract: true
     }).state('registration.all', {
@@ -403,6 +419,7 @@ function ($stateProvider, $urlRouterProvider, $controllerProvider, $compileProvi
             label: 'Individual'
         },
         resolve: loadSequence('wizardCtrl')
+
     }).state('registration.individual', {
         url: '/individual',
         templateUrl: "assets/views/help-pages/form_reg_individual.html",

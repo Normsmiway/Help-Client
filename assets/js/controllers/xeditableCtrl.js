@@ -37,9 +37,19 @@ function($scope, $filter) {
 	};
 }]);
 app.controller('TextareaCtrl', ["$scope",
-function($scope) {
+function ($scope) {
+    var textData="Hello world, I'm Norms and this is my story."
+    +"I'm a self motivated personality with high believe in God almighty. I try as much as possible to understand my place in life,"
+    +"what I stand for and what I expect of/from life on the long run. Having a clear distinction of these aforementioned facts, "
+    +"I tend to focus on what's important to me, my relationship with God Almighty, my family and their happiness all day long,"
+    +"my relationship with others and the impression I create of myself to every single individual I come across day in day out."
+    +"I try as much as possible to be the best I can be in anything I get involved with in life.I discovered early enough that "
+    +"I'm an extremist, and by this I mean whatever I do, I go extra mile with it and it doesn't require a rocket scientist to figure me out." 
+    +"Understanding this simple fact, I burn my energy on the good part of me (learning, teaching researching and creating solutions or at "
+    +"least brain storm on solutions) and in no time people think of me a great personality worthy of being appreciated always , "
+    +"at least I get that impression on most occasions with my encounters"
 	$scope.example = {
-		desc: 'Awesome user \ndescription!'
+		desc: textData
 	};
 }]);
 app.controller('SelectRemoteCtrl', ["$scope", "$filter", "$http",
